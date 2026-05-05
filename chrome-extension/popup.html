@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LinkedIn Import</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="wrap">
+      <header class="header">
+        <h1>LinkedIn Import</h1>
+        <p class="sub">Extract profile text and send to your local app.</p>
+      </header>
+
+      <section class="card">
+        <label class="label" for="appUrl">App URL</label>
+        <input
+          id="appUrl"
+          class="input"
+          type="url"
+          placeholder="https://stack-grow.vercel.app"
+          value="http://localhost:3000"
+        />
+
+        <label class="label" for="targetJob">Target job</label>
+        <input
+          id="targetJob"
+          class="input"
+          type="text"
+          placeholder="e.g., Product Designer"
+          value="Software Engineer (AI & Full-Stack Development)"
+        />
+
+        <div class="row">
+          <button id="extractBtn" class="btn btn-secondary" type="button">Extract</button>
+          <button id="sendBtn" class="btn btn-primary" type="button" disabled>
+            Open app & import
+          </button>
+        </div>
+
+        <p id="status" class="status"></p>
+        <details class="details">
+          <summary>Preview</summary>
+          <pre id="preview" class="preview"></pre>
+        </details>
+      </section>
+
+      <footer class="footer">
+        Works only on <code>linkedin.com/in/...</code> pages.
+      </footer>
+    </main>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
+

@@ -1,65 +1,61 @@
-import Image from "next/image";
+import Hero from "@/components/home/Hero";
+import InputForm from "@/components/home/InputForm";
+import Background3D from "@/components/layout/Background3D";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="relative min-h-screen text-white selection:bg-indigo-500/30 overflow-x-hidden">
+      {/* Three.js Background */}
+      <Background3D />
+
+      <div className="relative z-10 max-w-5xl mx-auto px-6 pt-24 pb-32">
+        <Hero />
+        <div className="mt-12 max-w-2xl mx-auto">
+          <InputForm />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="mt-16 max-w-2xl mx-auto">
+          <div className="p-6 md:p-8 bg-white/5 border border-white/10 rounded-3xl backdrop-blur-md">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div>
+                <h2 className="text-2xl font-extrabold text-white/90">Chrome Extension</h2>
+                <p className="text-gray-400 mt-1 text-sm leading-relaxed">
+                  Import your LinkedIn profile text automatically (About/Experience/Skills) while you’re logged in.
+                </p>
+              </div>
+              <a
+                href="/linkedin-roaster-extension.zip"
+                className="inline-flex items-center justify-center px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold shadow-lg shadow-emerald-500/20 transition-all active:scale-95"
+                download
+              >
+                Download Extension (.zip)
+              </a>
+            </div>
+
+            <div className="mt-6 grid grid-cols-1 gap-3 text-sm text-gray-300">
+              <div className="p-4 rounded-2xl bg-black/30 border border-white/10">
+                <p className="font-bold text-white/80 mb-1">Install</p>
+                <ol className="list-decimal list-inside space-y-1 text-gray-400">
+                  <li>Download the zip and extract it.</li>
+                  <li>Open <span className="text-white/80">chrome://extensions</span> (or Edge: <span className="text-white/80">edge://extensions</span>).</li>
+                  <li>Enable <span className="text-white/80">Developer mode</span>.</li>
+                  <li>Click <span className="text-white/80">Load unpacked</span> and select the extracted folder.</li>
+                </ol>
+              </div>
+              <div className="p-4 rounded-2xl bg-black/30 border border-white/10">
+                <p className="font-bold text-white/80 mb-1">Use</p>
+                <ol className="list-decimal list-inside space-y-1 text-gray-400">
+                  <li>Open a LinkedIn profile page (<span className="text-white/80">linkedin.com/in/...</span>).</li>
+                  <li>Click the extension → <span className="text-white/80">Extract</span>.</li>
+                  <li>In the extension, set <span className="text-white/80">App URL</span> to your site (e.g. <span className="text-white/80">https://your-project.vercel.app</span>).</li>
+                  <li>Then click <span className="text-white/80">Open app &amp; import</span>.</li>
+                  <li>Come back here and click <span className="text-white/80">Analyze Me</span>.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }

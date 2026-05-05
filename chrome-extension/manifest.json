@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Roaster Importer",
+  "version": "0.1.0",
+  "description": "Extracts text from a LinkedIn profile page and imports it into your local LinkedIn Roaster app.",
+  "action": {
+    "default_title": "Import LinkedIn Profile",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab", "scripting", "tabs", "storage"],
+  "host_permissions": [
+    "https://*.linkedin.com/*",
+    "http://localhost:3000/*",
+    "https://*.vercel.app/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://*.linkedin.com/in/*"],
+      "js": ["contentScript.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
+

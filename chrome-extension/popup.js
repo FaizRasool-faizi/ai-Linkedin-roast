@@ -14,10 +14,10 @@ function setStatus(msg) {
 async function loadSettings() {
   try {
     const settings = await chrome.storage.sync.get({
-      appUrl: "http://localhost:3000",
+      appUrl: "https://ai-linkedin-roast.vercel.app",
       targetJob: "Software Engineer (AI & Full-Stack Development)",
     });
-    if (appUrlEl) appUrlEl.value = settings.appUrl || "http://localhost:3000";
+    if (appUrlEl) appUrlEl.value = settings.appUrl || "https://ai-linkedin-roast.vercel.app";
     if (targetJobEl) targetJobEl.value = settings.targetJob || targetJobEl.value;
   } catch {
     // ignore
@@ -27,7 +27,7 @@ async function loadSettings() {
 async function saveSettings() {
   try {
     await chrome.storage.sync.set({
-      appUrl: (appUrlEl?.value || "").trim() || "http://localhost:3000",
+      appUrl: (appUrlEl?.value || "").trim() || "https://ai-linkedin-roast.vercel.app",
       targetJob: (targetJobEl?.value || "").trim() || "Software Engineer (AI & Full-Stack Development)",
     });
   } catch {
@@ -102,7 +102,8 @@ extractBtn.addEventListener("click", async () => {
 sendBtn.addEventListener("click", async () => {
   if (!extracted?.text) return;
   const targetJob = (targetJobEl.value || "").trim();
-  const baseUrl = (appUrlEl?.value || "").trim() || "http://localhost:3000";
+  const baseUrl =
+    (appUrlEl?.value || "").trim() || "https://ai-linkedin-roast.vercel.app";
 
   await saveSettings();
 
@@ -115,7 +116,7 @@ sendBtn.addEventListener("click", async () => {
     u.searchParams.set("import", "1");
     appUrl = u.toString();
   } catch {
-    setStatus("Invalid App URL. Example: https://stack-grow.vercel.app");
+    setStatus("Invalid App URL. Example: https://ai-linkedin-roast.vercel.app");
     sendBtn.disabled = false;
     return;
   }
@@ -191,7 +192,7 @@ sendBtn.addEventListener("click", async () => {
       setStatus(`Imported (${len} chars). Now switch to the app tab and click Analyze Me.`);
     } else {
       setStatus(
-        "Import failed (0 chars written). Make sure the app tab is http://localhost:3000 and try again."
+        "Import failed (0 chars written). Make sure App URL is correct and try again."
       );
     }
   } catch (e) {

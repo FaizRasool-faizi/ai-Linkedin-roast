@@ -21,8 +21,8 @@ export default function Hero() {
         transition={{ duration: 0.5, delay: 0.2 }}
         className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
       >
-        Paste your LinkedIn URL and let our AI analyze your profile. 
-        Get a brutal roast, a professional score, and a 7-day action plan.
+        Paste your LinkedIn <span className="text-white font-semibold">About + Experience</span> text or use our extension. 
+        Get a brutal roast, a professional score, and a 7-day action plan to fix your career.
       </motion.p>
     </div>
   );

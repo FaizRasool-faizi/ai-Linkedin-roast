@@ -20,7 +20,8 @@ export default function Home() {
               <div>
                 <h2 className="text-2xl font-extrabold text-white/90">Chrome Extension</h2>
                 <p className="text-gray-400 mt-1 text-sm leading-relaxed">
-                  Import your LinkedIn profile text automatically (About/Experience/Skills) while you’re logged in.
+                  Avoid manual copy-pasting. Import your LinkedIn profile automatically 
+                  while you’re logged in.
                 </p>
               </div>
               <a
@@ -34,22 +35,20 @@ export default function Home() {
 
             <div className="mt-6 grid grid-cols-1 gap-3 text-sm text-gray-300">
               <div className="p-4 rounded-2xl bg-black/30 border border-white/10">
-                <p className="font-bold text-white/80 mb-1">Install</p>
+                <p className="font-bold text-white/80 mb-1">Install Instructions</p>
                 <ol className="list-decimal list-inside space-y-1 text-gray-400">
-                  <li>Download the zip and extract it.</li>
-                  <li>Open <span className="text-white/80">chrome://extensions</span> (or Edge: <span className="text-white/80">edge://extensions</span>).</li>
-                  <li>Enable <span className="text-white/80">Developer mode</span>.</li>
+                  <li>Download and extract the zip file.</li>
+                  <li>Go to <span className="text-white/80">chrome://extensions</span> and enable <span className="text-white/80">Developer mode</span>.</li>
                   <li>Click <span className="text-white/80">Load unpacked</span> and select the extracted folder.</li>
                 </ol>
               </div>
               <div className="p-4 rounded-2xl bg-black/30 border border-white/10">
-                <p className="font-bold text-white/80 mb-1">Use</p>
+                <p className="font-bold text-white/80 mb-1">How to Use</p>
                 <ol className="list-decimal list-inside space-y-1 text-gray-400">
-                  <li>Open a LinkedIn profile page (<span className="text-white/80">linkedin.com/in/...</span>).</li>
-                  <li>Click the extension → <span className="text-white/80">Extract</span>.</li>
-                  <li>In the extension, set <span className="text-white/80">App URL</span> to your site (e.g. <span className="text-white/80">https://your-project.vercel.app</span>).</li>
-                  <li>Then click <span className="text-white/80">Open app &amp; import</span>.</li>
-                  <li>Come back here and click <span className="text-white/80">Analyze Me</span>.</li>
+                  <li>Open your LinkedIn profile page.</li>
+                  <li>Click the extension icon and hit <span className="text-white/80">Extract Profile</span>.</li>
+                  <li>Click <span className="text-white/80">Open App & Import</span> (it will auto-fill the form).</li>
+                  <li>Click <span className="text-white/80">Roast My Profile</span> here to get your results.</li>
                 </ol>
               </div>
             </div>

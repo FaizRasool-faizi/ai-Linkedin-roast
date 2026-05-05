@@ -5,7 +5,7 @@ import { useState, useRef } from "react";
 import * as random from "maath/random/dist/maath-random.esm";
 
 function Stars() {
-  const ref = useRef<any>();
+  const ref = useRef<any>(null);
   // Use a smaller, safer number for testing
   const [sphere] = useState(() => {
     const data = random.inSphere(new Float32Array(5000), { radius: 1.5 });

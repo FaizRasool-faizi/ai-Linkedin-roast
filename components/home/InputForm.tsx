@@ -27,9 +27,19 @@ export default function InputForm() {
         }
       } catch (e) {}
     };
+
+    const handleImportEvent = () => {
+      importFromLocalStorage();
+    };
+
     importFromLocalStorage();
     window.addEventListener("storage", importFromLocalStorage);
-    return () => window.removeEventListener("storage", importFromLocalStorage);
+    window.addEventListener("lr-import", handleImportEvent);
+
+    return () => {
+      window.removeEventListener("storage", importFromLocalStorage);
+      window.removeEventListener("lr-import", handleImportEvent);
+    };
   }, []);
 
   const statuses = [
